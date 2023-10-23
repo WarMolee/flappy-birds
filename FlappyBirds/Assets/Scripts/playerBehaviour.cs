@@ -9,10 +9,13 @@ public class playerBehaviour : MonoBehaviour
     public Rigidbody2D rb;
     public float jumpForce;
 
+    public int score;
+    public GameObject gameLogic;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        score = 1;
     }
 
     // Update is called once per frame
@@ -35,12 +38,25 @@ public class playerBehaviour : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Pipe")
+       /*  if (collision.gameObject.tag == "Pipe")
+        {
+            Debug.Log("Collision");
+            Destroy(gameObject);
+        } */
+
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "point")
+        {
+            Debug.Log(score++);
+            // Trigger your event here
+        }
+        if (other.gameObject.tag == "Pipe")
         {
             Debug.Log("Collision");
             Destroy(gameObject);
         }
-
     }
 }
 

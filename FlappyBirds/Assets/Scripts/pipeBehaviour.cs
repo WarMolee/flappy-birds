@@ -6,17 +6,11 @@ using UnityEngine;
 public class PipeBehaviiour : MonoBehaviour
 {
     public float pipeSpeed;
-    public float pipeXSpawn;
-    public float pipeYSpawnLow;
-    public float pipeYSpawnHigh;
-    
+
 
     void Start()
     {
-        float pipeYSpawn = UnityEngine.Random.Range(pipeYSpawnLow, pipeYSpawnHigh);
 
-        gameObject.transform.position = new Vector3(pipeXSpawn, pipeYSpawn, 0);
-        Debug.Log("Pipe Spawned");
     }
 
 
@@ -25,7 +19,7 @@ public class PipeBehaviiour : MonoBehaviour
         gameObject.transform.position += Vector3.left * (pipeSpeed * Time.deltaTime);
 
 
-        if(gameObject.transform.position.x < -pipeXSpawn)
+        if (gameObject.transform.position.x < -15)
         {
             Destroy(gameObject);
         }
