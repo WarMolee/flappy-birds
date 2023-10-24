@@ -24,7 +24,7 @@ public class playerBehaviour : MonoBehaviour
 
         if (transform.position.y < -5)
         {
-             playerDeath();
+            playerDeath();
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,7 +37,7 @@ public class playerBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Pipe")
         {
             Debug.Log("Collision");
-             playerDeath();
+            playerDeath();
         }
     }
 

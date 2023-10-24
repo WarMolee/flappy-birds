@@ -13,6 +13,7 @@ public class gameLogic : MonoBehaviour
     public Text gameOverText;
     public Button startButton;
 
+
     void Start()
     {
         startButton.onClick.AddListener(restartGame);
@@ -40,6 +41,11 @@ public class gameLogic : MonoBehaviour
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SpawnHill()
+    {
+
     }
 
 }
